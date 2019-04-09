@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include<iostream>
+
+
+class Unggas{
+private:
+	int jml_kaki;
+	char* warna_bulu;
+public:
+	void setwarnabulu(char* warna_bulu){
+		this->warna_bulu=warna_bulu;
+	}
+	char* getwarnabulu()
+	{
+		return this->warna_bulu;
+	}
+	void setJumlahKaki(int jml_kaki){
+		this->jml_kaki=jml_kaki;
+	}
+	int getJumlahKaki()
+	{
+		return this->jml_kaki;
+	}
+	void suara(char* suara){
+		std::cout << suara;
+	}
+	void terbang(char* terbang){
+		std::cout << terbang;
+	}
+};
+class Ayam:public Unggas{
+};
+class Itik:public Unggas{
+};
+class Burung:public Unggas{
+};
+
+int main(int argc, char **argv)
+{
+	Ayam ayam;
+	ayam.setwarnabulu("Merah");
+	ayam.setJumlahKaki(2);
+	std::cout << "warna bulu ayam: " << ayam.getwarnabulu();
+	std::cout <<"\njumlah kaki ayam: " << ayam.getJumlahKaki();
+	std::cout <<"\nsuara ayam: ";
+	ayam.suara("kukuruyuk");
+	std::cout << "\napakah ayam bisa terbang? ";
+	ayam.terbang("tidak\n\n");
+	
+	Itik itik;
+	itik.setwarnabulu("Putih");
+	itik.setJumlahKaki(2);
+	std::cout << "warna bulu itik: " << itik.getwarnabulu();
+	std::cout <<"\njumlah kaki itik: " << itik.getJumlahKaki();
+	std::cout <<"\nsuara itik: ";
+	itik.suara("peyekpeyek");
+	std::cout << "\napakah itik bisa terbang? ";
+	itik.terbang("tidak\n\n");
+	
+	Burung burung;
+	burung.setwarnabulu("BiruKuning");
+	burung.setJumlahKaki(2);
+	std::cout << "warna bulu burung: " << burung.getwarnabulu();
+	std::cout <<"\njumlah kaki burung: " << burung.getJumlahKaki();
+	std::cout <<"\nsuara burung: ";
+	burung.suara("kikukkikuk");
+	std::cout << "\napakah burung bisa terbang? ";
+	burung.terbang("bisa\n\n");
+	return 0;
+}

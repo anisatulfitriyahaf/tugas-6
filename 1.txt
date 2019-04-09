@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include<iostream>
+
+
+class Unggas{
+private:
+	int jml_kaki;
+	char* warna_bulu;
+public:
+	void setwarnabulu(char* warna_bulu){
+		this->warna_bulu=warna_bulu;
+	}
+	char* getwarnabulu()
+	{
+		return this->warna_bulu;
+	}
+	void setJumlahKaki(int jml_kaki){
+		this->jml_kaki=jml_kaki;
+	}
+	int getJumlahKaki()
+	{
+		return this->jml_kaki;
+	}
+	void suara(char* suara){
+		std::cout << suara;
+	}
+	void terbang(char* terbang){
+		std::cout << terbang;
+	}
+};
+class ayam:public Unggas{
+};
+class itik:public Unggas{
+};
+class burung:public Unggas{
+};
+
+int main(int argc, char **argv)
+{
+	ayam ayam;
+	ayam.setwarnabulu("Merah");
+	ayam.setJumlahKaki(2);
+	std::cout << "warna bulu ayam: " << ayam.getwarnabulu();
+	std::cout <<"\njumlah kaki ayam: " << ayam.getJumlahKaki();
+	std::cout <<"\nsuara ayam: ";
+	ayam.suara("kukuruyuk");
+	std::cout << "\napakah ayam bisa terbang? ";
+	ayam.terbang("tidak\n");
+	return 0;
+}
